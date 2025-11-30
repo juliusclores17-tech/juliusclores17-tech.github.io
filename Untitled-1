@@ -1,0 +1,214 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wala lang to</title>
+  <meta name="description" content="A little site made with love." />
+  <style>
+    :root{
+      --bg:#fff7fb;
+      --card:#fff;
+      --accent:#ff6fa3;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 24px rgba(14,22,40,0.08);
+      --radius:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#111}
+    a{color:inherit}
+    .container{max-width:980px;margin:32px auto;padding:20px}
+
+    
+    header{display:flex;gap:20px;align-items:center}
+    .hero-card{display:flex;gap:20px;padding:18px;background:linear-gradient(180deg,var(--card),#fff);border-radius:var(--radius);box-shadow:var(--shadow);align-items:center}
+    .avatar{width:120px;height:120px;border-radius:16px;overflow:hidden;flex:0 0 120px;position:relative}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:26px;margin:0}
+    p.lead{margin:6px 0;color:var(--muted)}
+    .cta{margin-left:auto}
+    button.btn{background:linear-gradient(90deg,var(--accent),#ff9ac7);border:0;padding:10px 16px;border-radius:12px;color:#fff;font-weight:600;cursor:pointer}
+
+    
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
+    .notes{min-height:120px}
+
+    
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px}
+
+    
+    .msg-list{display:flex;flex-direction:column;gap:8px}
+    .msg{padding:10px;border-radius:10px;background:linear-gradient(180deg,var(--glass),#fff8);backdrop-filter: blur(4px)}
+
+    
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    
+    .heart{display:inline-block;font-size:20px;color:var(--accent);transform-origin:center;animation:heartbeat 1.6s infinite}
+    @keyframes heartbeat{0%{transform:scale(1)}25%{transform:scale(1.12)}40%{transform:scale(.98)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+    
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:96px;height:96px;flex:0 0 96px}}
+
+    
+    .floating-heart{position:fixed;right:12px;bottom:12px;pointer-events:none;font-size:18px;opacity:.9}
+
+    
+    .slideshow{position:relative;overflow:hidden;border-radius:12px}
+    .slides{display:flex;transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .slide{min-width:100%;height:220px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px}
+
+    
+    .muted{color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #eee}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero-card" role="banner">
+        <div class="avatar" aria-hidden="true">
+          <img src="c:\Users\Administrator\Downloads\ff53f710-f020-461a-95b0-5aa2a843da00.jpg" alt="Her photo placeholder">
+        </div>
+        <div>
+          <h1>For youuu myy loveee!!!<span class="heart">♥</span></h1>
+          <p class="lead">A little corner on the web made just for you, because you deserve something special.</p>
+        </div>
+        <div class="cta">
+          <button class="btn" id="surpriseBtn" title="Click for a surprise">Open surprise</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <section class="card">
+        <h2>About you</h2>
+        <p class="muted">I just want to take a moment to tell you how much you mean to me. Every day with you feels brighter, softer, and happier. You’re not just my ka talking stage, you’re my safe place, my inspiration, and the person who makes everything worth it.</p>
+        <p class="muted">No matter how stressful things get, no matter how busy our days become, always remember this: I love you deeply, genuinely, and more than words can ever say. I’m here for you, proud of you, and excited for every moment we’ll share in the future.</p>
+        <div class="notes" contenteditable="true" aria-label="Editable love note">Julius loves you more every single day. Waooo ang bilis ha HAAHGHAGHAJGA okay okay, deserve ko ng kiss neto 💌</div>
+
+        <h3 style="margin-top:12px">Favorite moments</h3>
+        <div class="gallery" id="gallery">
+          <img src="c:\Users\Administrator\Downloads\bebe ko.jpg" alt="moment 1">
+          <img src="c:\Users\Administrator\Downloads\image.jpg" alt="moment 2">
+          <img src="c:\Users\Administrator\Downloads\image.89d6312e-9ea9-4a32-add0-948f23d93779.jpg" alt="moment 3">
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Basta slide</h3>
+          <div class="slideshow" id="slideshow">
+            <div class="slides" id="slides">
+              <div class="slide" style="background:linear-gradient(135deg,#ff9ac7,#ff6fa3);">You make me smile</div>
+              <div class="slide" style="background:linear-gradient(135deg,#6ec6ff,#9ad6ff);">Playing ML together</div>
+              <div class="slide" style="background:linear-gradient(135deg,#ffd57e,#ffb86b);">Loveu always</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:10px;justify-content:center">
+            <button id="prev" class="btn" style="padding:8px 12px">◀</button>
+            <button id="next" class="btn" style="padding:8px 12px">▶</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Send a message</h3>
+          <form id="msgForm">
+            <input type="text" id="name" placeholder="Your name" required />
+            <textarea id="message" rows="3" placeholder="Write something sweet..." required></textarea>
+            <button class="btn" type="submit" style="margin-top:8px">Send</button>
+          </form>
+          <div style="margin-top:10px">
+            <h4>Messages</h4>
+            <div class="msg-list" id="msgList">
+              <div class="msg muted">No messages yet — be the first to leave a note!</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Mwappsss<span class="heart">♥</span></div>
+    </footer>
+
+  </div>
+
+  <div class="floating-heart" aria-hidden="true">💖</div>
+
+  <script>
+    
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const total = slidesEl.children.length;
+      let idx = 0;
+      function show(i){
+        idx = (i + total) % total;
+        slidesEl.style.transform = `translateX(-${idx*100}%)`;
+      }
+      document.getElementById('prev').addEventListener('click', ()=> show(idx-1));
+      document.getElementById('next').addEventListener('click', ()=> show(idx+1));
+      
+      setInterval(()=> show(idx+1),4500);
+    })();
+
+    
+    (function(){
+      const form = document.getElementById('msgForm');
+      const list = document.getElementById('msgList');
+      function addMsg(name,text){
+        const el = document.createElement('div');
+        el.className='msg';
+        el.innerHTML = `<strong>${escapeHtml(name)}</strong><div style="margin-top:6px">${escapeHtml(text)}</div>`;
+        list.prepend(el);
+      }
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        const name = form.querySelector('#name').value.trim();
+        const message = form.querySelector('#message').value.trim();
+        if(!name || !message) return;
+        addMsg(name,message);
+        form.reset();
+      });
+      function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    })();
+
+    
+    (function(){
+      const btn = document.getElementById('surpriseBtn');
+      btn.addEventListener('click', ()=>{
+        
+        for(let i=0;i<24;i++){
+          const p = document.createElement('div');
+          p.textContent = '♥';
+          p.style.position='fixed';
+          p.style.left = (50 + (Math.random()-0.5)*60) + '%';
+          p.style.top = (50 + (Math.random()-0.5)*30) + '%';
+          p.style.fontSize = (8 + Math.random()*22) + 'px';
+          p.style.opacity = '0.95';
+          p.style.transform = `translate(-50%,-50%) rotate(${Math.random()*360}deg)`;
+          p.style.pointerEvents='none';
+          document.body.appendChild(p);
+          const dx = (Math.random()-0.5)*300; const dy = -200 - Math.random()*300;
+          p.animate([
+            {transform: p.style.transform, opacity:1},
+            {transform: `translate(${dx}px, ${dy}px) rotate(${Math.random()*720}deg)`, opacity:0}
+          ],{duration:1200 + Math.random()*800, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish = ()=> p.remove();
+        }
+        
+        const toast = document.createElement('div');
+        toast.textContent = 'Surprise! I love you.';
+        toast.style.position='fixed';toast.style.left='50%';toast.style.bottom='12%';toast.style.transform='translateX(-50%)';
+        toast.style.background='linear-gradient(90deg,#ffffff, #fff6f9)';toast.style.padding='12px 18px';toast.style.borderRadius='12px';toast.style.boxShadow='0 8px 30px rgba(0,0,0,0.12)';
+        document.body.appendChild(toast);
+        setTimeout(()=> toast.remove(),2200);
+      });
+    })();
+  </script>
+</body>
+</html>
